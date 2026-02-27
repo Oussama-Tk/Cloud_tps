@@ -1,0 +1,16 @@
+{
+  "name": "tps_cloud",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Oussama",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
+}
