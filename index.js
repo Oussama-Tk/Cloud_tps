@@ -113,7 +113,7 @@ app.post('/reservation/add' , (req , res)=>{
 
 app.get('/chambres' , (req , res)=> {
     const {date_d , date_a} = req.body ;
-    db.query('SELECT * FROM chambres c JOIN reservations r ON c.id = r.chambre_id WHERE c.disponible = ? AND r.date_depart < ? AND r.date_arrivee > ? ' , [1 , date_d , date_a] , (err , result) => {
+    db.query('SELECT * FROM chambres c JOIN reservations r ON c.id = r.chambre_id WHERE r.date_depart < ? OR r.date_arrivee > ? ' , [date_a , date_d] , (err , result) => {
         if(err) throw err ;
         res.json(result) ;
     }) ;
